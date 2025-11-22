@@ -4,6 +4,7 @@ import OutbreakMap from "@/components/OutbreakMap";
 import PredictionPanel from "@/components/PredictionPanel";
 import AlertBanner from "@/components/AlertBanner";
 import PreventionTips from "@/components/PreventionTips";
+import HealthChatbot from "@/components/HealthChatbot";
 import { Activity, Users, AlertTriangle, TrendingDown } from "lucide-react";
 
 const Index = () => {
@@ -54,6 +55,11 @@ const Index = () => {
           <div>
             <PredictionPanel />
           </div>
+        </div>
+
+        {/* AI Chat Assistant */}
+        <div className="mb-8">
+          <HealthChatbot />
         </div>
 
         {/* Prevention Tips */}
