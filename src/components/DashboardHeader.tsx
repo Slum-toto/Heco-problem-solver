@@ -11,7 +11,7 @@ const DashboardHeader = () => {
             <Activity className="w-6 h-6 text-primary" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-foreground">Kibera Health AI</h1>
+            <h1 className="text-xl font-bold text-foreground">Heco-africa</h1>
             <p className="text-sm text-muted-foreground">Disease Outbreak Prevention System</p>
           </div>
         </div>
