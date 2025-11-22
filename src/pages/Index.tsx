@@ -1,12 +1,64 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import DashboardHeader from "@/components/DashboardHeader";
+import StatCard from "@/components/StatCard";
+import OutbreakMap from "@/components/OutbreakMap";
+import PredictionPanel from "@/components/PredictionPanel";
+import AlertBanner from "@/components/AlertBanner";
+import PreventionTips from "@/components/PreventionTips";
+import { Activity, Users, AlertTriangle, TrendingDown } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <DashboardHeader />
+      
+      <main className="container mx-auto px-4 py-8">
+        <AlertBanner />
+        
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <StatCard
+            title="Active Cases"
+            value="77"
+            description="Currently under monitoring"
+            icon={Activity}
+            variant="default"
+          />
+          <StatCard
+            title="Population at Risk"
+            value="12,847"
+            description="In high-risk zones"
+            icon={Users}
+            variant="warning"
+          />
+          <StatCard
+            title="Active Alerts"
+            value="3"
+            description="Requiring immediate attention"
+            icon={AlertTriangle}
+            variant="danger"
+          />
+          <StatCard
+            title="Prevention Rate"
+            value="82%"
+            description="Successful interventions"
+            icon={TrendingDown}
+            variant="safe"
+          />
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div className="lg:col-span-2">
+            <OutbreakMap />
+          </div>
+          <div>
+            <PredictionPanel />
+          </div>
+        </div>
+
+        {/* Prevention Tips */}
+        <PreventionTips />
+      </main>
     </div>
   );
 };
